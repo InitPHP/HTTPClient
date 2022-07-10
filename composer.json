@@ -1,0 +1,26 @@
+{
+    "name": "initphp/http-client",
+    "description": "Psr18 HTTP Client Library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "InitPHP\\HTTPClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Muhammet ŞAFAK",
+            "email": "info@muhammetsafak.com.tr",
+            "role": "Developer",
+            "homepage": "https://www.muhammetsafak.com.tr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4",
+        "psr/http-client": "^1.0",
+        "initphp/curl": "^1.0",
+        "initphp/http": "^1.0"
+    }
+}
