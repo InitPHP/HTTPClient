@@ -1,5 +1,49 @@
 # InitPHP HTTP Client
 
+> ## ⚠️ DEPRECATED — Use [`initphp/http`](https://github.com/InitPHP/HTTP) instead
+>
+> As part of the InitPHP package consolidation, **this package has been merged into [`initphp/http`](https://github.com/InitPHP/HTTP) starting with version 2.2.** The consolidated package ships its own PSR-18 client that talks to `ext-curl` directly — no separate cURL wrapper is required.
+>
+> This repository is kept read-only for historical reference. **No further updates will be released.**
+>
+> ### Why this package no longer works
+>
+> The standalone `\InitPHP\HTTPClient\Client` was written against `initphp/http:^1.x`, which used the flat `\InitPHP\HTTP\*` namespace. In `initphp/http:^2.0` those classes moved to `\InitPHP\HTTP\Message\*`, so this package's `use` statements no longer resolve. It is effectively broken against any current version of `initphp/http`.
+>
+> ### Migration
+>
+> Drop the dependency and use the canonical client shipped in `initphp/http`:
+>
+> ```diff
+> - "initphp/http-client": "^1.0",
+> - "initphp/http": "^1.0",
+> + "initphp/http": "^2.2"
+> ```
+>
+> Code change:
+>
+> ```php
+> // Before
+> use InitPHP\HTTPClient\Client;
+> use InitPHP\HTTP\Request;
+>
+> $client   = new Client(['timeout' => 0]);
+> $request  = new Request('GET', 'https://example.com');
+> $response = $client->sendRequest($request);
+>
+> // After
+> use InitPHP\HTTP\Client\Client;
+> use InitPHP\HTTP\Message\Request;
+>
+> $client   = new Client();
+> $request  = new Request('GET', 'https://example.com');
+> $response = $client->sendRequest($request);
+> ```
+>
+> See the [HTTP README — Migrating from `initphp/http-client`](https://github.com/InitPHP/HTTP#migrating-from-initphphttp-client) for option-by-option translation notes.
+
+---
+
 It is HTTP Client library following Psr-18 standards. It uses cURL for HTTP requests. 
 
 ## Requirements

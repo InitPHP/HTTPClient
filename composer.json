@@ -1,8 +1,9 @@
 {
     "name": "initphp/http-client",
-    "description": "Psr18 HTTP Client Library",
+    "description": "Psr18 HTTP Client Library (DEPRECATED — merged into initphp/http:^2.2)",
     "type": "library",
     "license": "MIT",
+    "abandoned": "initphp/http",
     "autoload": {
         "psr-4": {
             "InitPHP\\HTTPClient\\": "src/"
